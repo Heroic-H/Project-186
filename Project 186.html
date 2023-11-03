@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-spe-particles-component@1.0.4/dist/aframe-spe-particles-component.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <a-entity position="0 1 0"
+                spe-particles="
+                    color:blue,red,green,black;
+                    distribution:sphere;
+                    randomize-velocity:true;
+                    radius:10;
+                    particle-count:80000;
+                    velocity:3;
+                    velocity-spread:150;
+                    drag:3;
+                    max-age:5;
+                    duration:-1;
+                    blending:additive;
+                    active-multiplier:100;
+                    size:1,1,1,0
+                "
+            ></a-entity>
+            <a-sky color="#000"></a-sky>
+            <a-camera position="0 0 30"></a-camera>
+            <a-sphere position="0 1 0" animation="property:color; from:#00f; to:#f70; easing:linear; loop:true; dur:2500" radius="5"></a-sphere>
+            <a-ring color="#ff0" position="0 1 0" radius-inner="7" radius-outer="2" animation="property:rotation; from:0 0 0; to:0 720 0; easing:linear; loop:true; dur:25000"></a-ring>
+        </a-scene>
+    </body>
+</html>
